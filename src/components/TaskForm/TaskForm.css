@@ -1,0 +1,26 @@
+.formAddTasks {
+    width: 540px;
+    background-color: #AEC4DE;
+    border-radius: 20px;
+}
+
+.formAddTasks input {
+    width: 85%;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    background-color: transparent;
+    padding: 20px;
+    outline: none;
+}
+
+.formAddTasks button {
+    background-color: #6090BF;
+    width: 15%;
+    height: 40px;
+    font-size: 16px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
