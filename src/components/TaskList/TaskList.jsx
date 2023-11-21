@@ -5,9 +5,7 @@ const TaskList = ({tasks}) => {
     return (
         <div>
             <h2>Tareas:</h2>
-            <div>
-                
-            </div>
+            
         </div>
     )
 }

@@ -5,8 +5,8 @@ const TaskItem = ({task}) => {
     return (
         <div>
             <h3> {task.title} </h3>
-            <span> {task.createAt} </span>
-            <button> X </button>
+            <span> {task.date} </span>
+            <button> x </button>
         </div>
     )
 }

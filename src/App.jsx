@@ -1,23 +1,27 @@
 import React, { useState } from 'react'
 import './App.css'
+
 import {TaskForm, TaskList} from './components'
 
 function App() {
-  const [tasks, setTask] = useState([])
 
-  const addTask = (newTask) => {
-    setTask([tasks, newTask])
+  const [tasks, setTasks] = useState([])
+  const deleteTask = (taskId) => {
+    setTasks(tasks.filter(task => task.id != taskId))
   }
 
-  const [showTask, setShowTask] = useState([])
+  const addTask = (newTask) => {
+    setTasks([...tasks, newTask])
+  }
 
   console.log(tasks)
+
   return (
     <>
       <div className='container'>
         <h1>To-do List</h1>
         <TaskForm addTask= {addTask} />
-        <TaskList task={showTask} />
+        <TaskList task={tasks} />
       </div> 
     </>
   )

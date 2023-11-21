@@ -2,16 +2,16 @@ import React from "react";
 import './TaskForm.css'
 
 const TaskForm = ({addTask}) => {
+
     const addNewTaks = (e) => {
         e.preventDefault()
         const {title} = e.target
-        if (title.value) {
-            addTask({
-                title: title.value,
-                id: Math.random(),
-                createAt: new Date().toLocaleString()
-            })
+        if (title.value === '' ) {
+            alert('No agrego ninguna tarea')
+        } else {
+            addTask({title: title.value, id: Math.random() + 'Tarea' , date: new Date().toLocaleString() })
         }
+        {title.value = ''}
     }
     return (
         <div>
