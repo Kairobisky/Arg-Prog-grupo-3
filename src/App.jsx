@@ -26,7 +26,7 @@ console.log(tasks)
       <div className='container'>
         <h1>To-do List</h1>
         <TaskForm addTask= {addTask} />
-        <TaskList tasks={tasks} handleToggleCompleted={handleToggleCompleted} />
+        <TaskList tasks={tasks} handleToggleCompleted={handleToggleCompleted} deleteTask={deleteTask} />
       </div> 
     </>
   )

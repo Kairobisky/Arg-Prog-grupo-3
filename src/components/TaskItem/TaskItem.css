@@ -1,3 +1,42 @@
+.item {
+    display: flex;
+    background-color: #aec4de;
+    align-items: center;
+    border-radius: 20px;
+    height: 40px;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.btnStateCompleted {
+    width: 10%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    background-color: greenyellow;  
+    margin-right: 10px;  
+}
+
+.itemDate {
+    color: greenyellow;
+    width: 22%;
+}
+
+.delete {
+    width: 8%;
+    height: 40px;
+    background-color: red;
+    border: none;
+    border-radius: 20px;
+    font-size: 20px;
+}
+
 .completed {
     text-decoration: line-through;
+    width: 60%;
+}
+
+.incompleted {
+    width: 60%;
 }

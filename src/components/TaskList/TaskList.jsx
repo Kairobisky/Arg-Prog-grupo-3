@@ -1,7 +1,7 @@
 import React from "react";
 import TaskItem from "../TaskItem/TaskItem";
 
-const TaskList = ({tasks, handleToggleCompleted}) => {
+const TaskList = ({tasks, handleToggleCompleted, deleteTask}) => {
 
     return (
         <div>
@@ -11,7 +11,7 @@ const TaskList = ({tasks, handleToggleCompleted}) => {
                 ? <h2>NO hay nada</h2>
                 : <div>
                     {tasks.map((task, index) => (
-                    <TaskItem handleToggleCompleted={handleToggleCompleted} index={index} task={task} key={task.id} />
+                    <TaskItem handleToggleCompleted={handleToggleCompleted} index={index} task={task} key={task.id} deleteTask={deleteTask} />
                 ))}
                 </div> 
             }

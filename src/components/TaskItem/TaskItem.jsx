@@ -1,16 +1,16 @@
 import React from "react";
 import './TaskItem.css'
 
-const TaskItem = ({task, index, handleToggleCompleted}) => {
+const TaskItem = ({task, index, handleToggleCompleted, deleteTask}) => {
 
     return (
-        <div>
+        <div className="item" >
+            <button className="btnStateCompleted" onClick={() => {handleToggleCompleted(index)}} > C </button>
             <h3 className={task.completed 
             ? 'completed' 
-        : '' } > {task.title} </h3>
-            <span> {task.date} </span>
-            <button> x </button>
-            <button onClick={() => {handleToggleCompleted(index)}} >completada</button>
+            : 'incompleted' } > {task.title} </h3>
+            <span className="itemDate" > {task.date} </span>
+            <button className="delete" onClick={() => deleteTask(task.id)} > x </button>
         </div>
     )
 }
