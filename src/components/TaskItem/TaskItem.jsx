@@ -13,7 +13,7 @@ const TaskItem = ({task, index, handleToggleCompleted, deleteTask}) => {
             ? 'completed' 
             : 'incompleted' } > {task.title} </p>
             <span className="itemDate" > {task.date} </span>
-            <button className="delete" onClick={() => deleteTask(task.id)} > x </button>
+            <button className="delete" onClick={() => deleteTask(task.id)} > </button>
         </div>
     )
 }
