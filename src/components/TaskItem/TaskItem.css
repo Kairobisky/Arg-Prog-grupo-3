@@ -17,7 +17,8 @@
     font-size: 16px;
     background: url(./checket.svg);
     background-size: cover;
-    margin-right: 10px;  
+    margin-right: 10px;
+    cursor: pointer;
 }
 
 .btnStateNotCompleted {
@@ -26,6 +27,7 @@
     border-radius: 20px;
     border: none;
     margin-right: 10px;
+    cursor: pointer;
 }
 
 .itemDate {

@@ -1,24 +1,38 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 
-import {TaskForm, TaskList} from './components'
+import {TaskForm, TaskList, TaskSearch} from './components'
 
 function App() {
 
+  // Añadir Tareas
   const [tasks, setTasks] = useState([])
+
+  const addTask = (newTask) => {
+      setTasks([...tasks, newTask])
+    }
+
+  // Borrar tareas
   const deleteTask = (taskId) => {
     setTasks(tasks.filter(task => task.id != taskId))
   }
 
-  const addTask = (newTask) => {
-    setTasks([...tasks, newTask])
-  }
-
+  // Marcar tareas como Completadas
   const handleToggleCompleted = (index) => {
     const updatedTasks = [...tasks]
     updatedTasks[index] = {...updatedTasks[index], completed: !updatedTasks[index].completed}
     setTasks(updatedTasks)
 }
+
+  // Buscador de tareas
+  const [filteredTask, setFilteredTask] = ([])
+
+  const handleSearchTask = (searchString) => {
+    const filtered = tasks.filter(task =>
+      task.title.toLowerCase().includes(searchString.toLowerCase())
+      )
+      setFilteredTask(filtered)
+  };
 
 console.log(tasks)
   return (
@@ -27,9 +41,7 @@ console.log(tasks)
         <h1>To-do List</h1>
         <TaskForm addTask= {addTask} />
         <h2>Buscar Tareas</h2>
-        <div className='searchBox' >
-          <input id='searchTask' name='searchTask' placeholder='Ingrese la tarea a buscar.' />
-        </div>
+        <TaskSearch tasks={tasks} onSearch={handleSearchTask} />
         <TaskList tasks={tasks} handleToggleCompleted={handleToggleCompleted} deleteTask={deleteTask} />
       </div> 
     </>
