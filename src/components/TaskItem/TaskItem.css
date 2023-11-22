@@ -6,21 +6,31 @@
     height: 40px;
     width: 100%;
     margin: 20px 0;
+    padding: 20px;
 }
 
 .btnStateCompleted {
-    width: 10%;
-    height: 40px;
+    width: 6%;
+    height: 30px;
     border: none;
     border-radius: 20px;
     font-size: 16px;
-    background-color: greenyellow;  
+    background-color: green;  
     margin-right: 10px;  
 }
 
+.btnStateNotCompleted {
+    width: 6%;
+    height: 30px;
+    border-radius: 20px;
+    border: none;
+    margin-right: 10px;
+}
+
 .itemDate {
-    color: greenyellow;
-    width: 22%;
+    color: gray;
+    width: 20%;
+    font-size: 13px;
 }
 
 .delete {
@@ -35,8 +45,10 @@
 .completed {
     text-decoration: line-through;
     width: 60%;
+    max-width: 60%;
 }
 
 .incompleted {
     width: 60%;
+    max-width: 60%;
 }

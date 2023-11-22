@@ -5,10 +5,13 @@ const TaskItem = ({task, index, handleToggleCompleted, deleteTask}) => {
 
     return (
         <div className="item" >
-            <button className="btnStateCompleted" onClick={() => {handleToggleCompleted(index)}} > C </button>
-            <h3 className={task.completed 
+            <button className=
+            {task.completed 
+            ? "btnStateCompleted" 
+            : "btnStateNotCompleted"} onClick={() => {handleToggleCompleted(index)}} >  </button>
+            <p className={task.completed 
             ? 'completed' 
-            : 'incompleted' } > {task.title} </h3>
+            : 'incompleted' } > {task.title} </p>
             <span className="itemDate" > {task.date} </span>
             <button className="delete" onClick={() => deleteTask(task.id)} > x </button>
         </div>

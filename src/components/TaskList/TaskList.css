@@ -1,0 +1,9 @@
+.boxList {
+    margin: 20px 0;
+}
+
+.boxList > h3 {
+    text-align: center;
+    color: red;
+    font-size: 25px;
+}

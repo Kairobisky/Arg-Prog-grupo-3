@@ -26,6 +26,10 @@ console.log(tasks)
       <div className='container'>
         <h1>To-do List</h1>
         <TaskForm addTask= {addTask} />
+        <h2>Buscar Tareas</h2>
+        <div className='searchBox' >
+          <input id='searchTask' name='searchTask' placeholder='Ingrese la tarea a buscar.' />
+        </div>
         <TaskList tasks={tasks} handleToggleCompleted={handleToggleCompleted} deleteTask={deleteTask} />
       </div> 
     </>
