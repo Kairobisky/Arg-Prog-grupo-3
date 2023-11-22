@@ -1,12 +1,15 @@
 import React, { useEffect, useState } from 'react'
 import './App.css'
 
-import {TaskForm, TaskList, TaskSearch} from './components'
+import {TaskForm, TaskList} from './components'
 
 function App() {
 
   // Añadir Tareas
-  const [tasks, setTasks] = useState([])
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem('tasks')
+    return savedTasks ? JSON.parse(savedTasks) : []
+  })
 
   const addTask = (newTask) => {
       setTasks([...tasks, newTask])
@@ -25,14 +28,37 @@ function App() {
 }
 
   // Buscador de tareas
-  const [filteredTask, setFilteredTask] = ([])
-
+  /*  const [filteredTask, setFilteredTask] = ([]) 
+  
   const handleSearchTask = (searchString) => {
     const filtered = tasks.filter(task =>
       task.title.toLowerCase().includes(searchString.toLowerCase())
       )
       setFilteredTask(filtered)
-  };
+    };
+    */
+   const [searchString, setSearchString] = useState('')
+   const [currentTasks, setCurrentTask] = useState([])
+   
+   useEffect(()=>{
+     console.log('detecte un cambio')
+     setCurrentTask(tasks.filter(task => 
+      task.title.toLowerCase().includes(searchString.toLowerCase()) 
+      ))
+    }, [searchString, tasks])
+    
+    const handleChangeSearchString = (e) =>{
+      setSearchString(e.target.value)
+    }
+    
+    // Guardar datos
+    useEffect(() => {
+      localStorage.setItem('tasks', JSON.stringify(tasks))
+    }, [tasks] )
+  //   const saveTasksToLocalStorage = (updatedTasks) => {
+  //   localStorage.setItem('tasks', JSON.stringify(updatedTasks));
+  //   setTasks(updatedTasks);
+  // };
 
 console.log(tasks)
   return (
@@ -41,8 +67,12 @@ console.log(tasks)
         <h1>To-do List</h1>
         <TaskForm addTask= {addTask} />
         <h2>Buscar Tareas</h2>
-        <TaskSearch tasks={tasks} onSearch={handleSearchTask} />
-        <TaskList tasks={tasks} handleToggleCompleted={handleToggleCompleted} deleteTask={deleteTask} />
+        <input className='buscador'
+        placeholder='Ingresa algo para filtrar' 
+        onChange={handleChangeSearchString}
+        value={searchString}
+        />
+        <TaskList tasks={currentTasks} handleToggleCompleted={handleToggleCompleted} deleteTask={deleteTask} />
       </div> 
     </>
   )
