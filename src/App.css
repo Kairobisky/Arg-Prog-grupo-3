@@ -3,9 +3,11 @@
     border-radius: 20px;
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
+    max-width: 600px;
 }
 
 .container > h1 {
     text-align: center;
     margin: 20px;
+    
 }
