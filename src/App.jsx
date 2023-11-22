@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css'
 
 import {TaskForm, TaskList} from './components'
@@ -14,14 +14,19 @@ function App() {
     setTasks([...tasks, newTask])
   }
 
-  console.log(tasks)
+  const handleToggleCompleted = (index) => {
+    const updatedTasks = [...tasks]
+    updatedTasks[index] = {...updatedTasks[index], completed: !updatedTasks[index].completed}
+    setTasks(updatedTasks)
+}
 
+console.log(tasks)
   return (
     <>
       <div className='container'>
         <h1>To-do List</h1>
         <TaskForm addTask= {addTask} />
-        <TaskList task={tasks} />
+        <TaskList tasks={tasks} handleToggleCompleted={handleToggleCompleted} />
       </div> 
     </>
   )

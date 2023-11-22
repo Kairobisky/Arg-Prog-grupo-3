@@ -9,10 +9,11 @@ const TaskForm = ({addTask}) => {
         if (title.value === '' ) {
             alert('No agrego ninguna tarea')
         } else {
-            addTask({title: title.value, id: Math.random() + 'Tarea' , date: new Date().toLocaleString() })
+            addTask({completed: false, title: title.value, id: Math.random() + 'Tarea' , date: new Date().toLocaleString() })
         }
         {title.value = ''}
     }
+
     return (
         <div>
             <form className="formAddTasks" onSubmit={addNewTaks} >
