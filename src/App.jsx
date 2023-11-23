@@ -5,12 +5,12 @@ import { TaskForm, TaskList, TaskSearch } from "./components";
 
 function App() {
   // creo un form para no tener tantos useStates
-  // aca le paso un objeto con todas las cosas que necesita
+  // aca le paso un objeto con todas las cosas que necesita y los inicio con sus respectivos estados iniciales
   const [form, setForm] = useState({
-    addTask: "", // agregar las tareas
-    filters: false, // activar los filtros segun el checkbox
-    filterTask: "", // para filtrar las tareas segun su titulo
-    taskStateFilter: "T", // para filtrar las tareas segun completadas, incompletas o todas, se inicia en todas
+    addTask: "",
+    filters: false,
+    filterTask: "", 
+    taskStateFilter: "T", 
   });
 
   // guardar tareas
