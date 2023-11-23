@@ -12,31 +12,40 @@ const TaskSearch = ({ handleChange, form }) => {
         value={form.filterTask}
       />
 
-      <label htmlFor="T">Todos</label>
-      <input
-        type="radio"
-        checked={form.taskStateFilter === "T"}
-        onChange={handleChange}
-        name="taskStateFilter"
-        id="T"
-      />
+      <div className="radioContainer">
+        <div className="radioBox">
+          <label htmlFor="T">Todos</label>
+          <input
+            type="radio"
+            checked={form.taskStateFilter === "T"}
+            onChange={handleChange}
+            name="taskStateFilter"
+            id="T"
+          />
+        </div>
 
-      <label htmlFor="C">Completado</label>
-      <input
-        type="radio"
-        checked={form.taskStateFilter === "C"}
-        onChange={handleChange}
-        name="taskStateFilter"
-        id="C"
-      />
-      <label htmlFor="I">Incompletado</label>
-      <input
-        type="radio"
-        checked={form.taskStateFilter === "I"}
-        onChange={handleChange}
-        name="taskStateFilter"
-        id="I"
-      />
+        <div className="radioBox">
+          <label htmlFor="C">Completado</label>
+          <input
+            type="radio"
+            checked={form.taskStateFilter === "C"}
+            onChange={handleChange}
+            name="taskStateFilter"
+            id="C"
+          />
+        </div>
+
+        <div className="radioBox">
+          <label htmlFor="I">Incompletado</label>
+          <input
+            type="radio"
+            checked={form.taskStateFilter === "I"}
+            onChange={handleChange}
+            name="taskStateFilter"
+            id="I"
+          />
+        </div>
+      </div>
     </>
   );
 };

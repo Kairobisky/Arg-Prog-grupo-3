@@ -3,7 +3,7 @@ import "./TaskForm.css";
 
 const TaskForm = ({ addNewTask, handleChange, form }) => {
   return (
-    <div>
+    <div className="containerForm">
       <form className="formAddTasks" onSubmit={addNewTask}>
         <input
           id="title"
@@ -14,14 +14,16 @@ const TaskForm = ({ addNewTask, handleChange, form }) => {
         />
         <button type="submit">Agregar</button>
       </form>
-      <input
-        type="checkbox"
-        checked={form.filters}
-        name="filters"
-        id="filters"
-        onChange={handleChange}
-      />
-      <label htmlFor="filters">Filtros</label>
+      <div className="filterBox" >
+        <input
+          type="checkbox"
+          checked={form.filters}
+          name="filters"
+          id="filters"
+          onChange={handleChange}
+        />
+        <label htmlFor="filters">Filtros</label>
+      </div>
     </div>
   );
 };

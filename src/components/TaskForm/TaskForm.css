@@ -1,6 +1,11 @@
+.containerForm {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
 .formAddTasks {
-    width: 540px;
-    background-color: #AEC4DE;
+    min-width: 32rem;
     border-radius: 20px;
 }
 
@@ -9,8 +14,8 @@
     height: 40px;
     font-size: 16px;
     border: none;
-    border-radius: 20px;
-    background-color: transparent;
+    border-radius: 20px  0 0 20px;
+    background-color: #AEC4DE;
     padding: 20px;
     outline: none;
 }
@@ -21,6 +26,20 @@
     height: 40px;
     font-size: 16px;
     border: none;
-    border-radius: 20px;
+    border-radius: 0 20px 20px 0;
     cursor: pointer;
+}
+
+.filterBox {
+    display: flex;
+    align-items: center;
+}
+
+.filterBox input[type='checkbox'] {
+    width: 20px;
+    height: 20px;
+}
+
+.filterBox > label {
+    font-size: 18px;
 }
