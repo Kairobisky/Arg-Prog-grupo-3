@@ -1,27 +1,29 @@
 import React from "react";
-import './TaskForm.css'
+import "./TaskForm.css";
 
-const TaskForm = ({addTask}) => {
+const TaskForm = ({ addNewTask, handleChange, form }) => {
+  return (
+    <div>
+      <form className="formAddTasks" onSubmit={addNewTask}>
+        <input
+          id="title"
+          name="addTask"
+          placeholder="Agrega una nueva tarea."
+          onChange={handleChange}
+          value={form.addTask}
+        />
+        <button type="submit">Agregar</button>
+      </form>
+      <input
+        type="checkbox"
+        checked={form.filters}
+        name="filters"
+        id="filters"
+        onChange={handleChange}
+      />
+      <label htmlFor="filters">Filtros</label>
+    </div>
+  );
+};
 
-    const addNewTaks = (e) => {
-        e.preventDefault()
-        const {title} = e.target
-        if (title.value === '' ) {
-            alert('No agrego ninguna tarea')
-        } else {
-            addTask({completed: false, title: title.value, id: Math.random() + 'Tarea' , date: new Date().toLocaleString() })
-        }
-        {title.value = ''}
-    }
-
-    return (
-        <div>
-            <form className="formAddTasks" onSubmit={addNewTaks} >
-                <input id="title" name="title" placeholder="Agrega una nueva tarea." />
-                <button type="submit" >Agregar</button>
-            </form>
-        </div>
-    )
-}
-
-export default TaskForm
+export default TaskForm;

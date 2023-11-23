@@ -3,10 +3,9 @@
     background-color: #aec4de;
     align-items: center;
     border-radius: 20px;
-    height: 40px;
     width: 100%;
     margin: 20px 0;
-    padding: 20px;
+    padding: 10px;
 }
 
 .btnStateCompleted {
@@ -47,8 +46,10 @@
 }
 
 .completed, .incompleted {
-    width: 70%;
-    max-width: 70%;
+    width: 65%;
+    max-width: 65%;
+    word-break: break-all;
+    white-space: normal;
 }
 
 .completed {
