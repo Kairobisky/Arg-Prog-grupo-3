@@ -8,7 +8,7 @@ const TaskForm = ({ addNewTask, handleChange, form }) => {
         <input
           id="title"
           name="addTask"
-          placeholder="Agrega una nueva tarea."
+          placeholder="Agrega una tarea."
           onChange={handleChange}
           value={form.addTask}
         />

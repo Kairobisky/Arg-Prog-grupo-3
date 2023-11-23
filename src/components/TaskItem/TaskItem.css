@@ -8,24 +8,20 @@
     padding: 10px;
 }
 
+.btnStateNotCompleted, 
 .btnStateCompleted {
     width: 6%;
     height: 30px;
     border: none;
     border-radius: 20px;
-    background: url(./checket.svg);
-    background-size: cover;
     margin-right: 10px;
     cursor: pointer;
 }
 
-.btnStateNotCompleted {
-    width: 6%;
-    height: 30px;
-    border-radius: 20px;
-    border: none;
-    margin-right: 10px;
-    cursor: pointer;
+.btnStateCompleted {
+    background: url(./checket.svg);
+    background-size: cover;
+    background-position: center;
 }
 
 .itemDate {
@@ -45,7 +41,8 @@
     cursor: pointer;
 }
 
-.completed, .incompleted {
+.completed,
+.incompleted {
     width: 65%;
     max-width: 65%;
     word-break: break-all;
@@ -55,4 +52,23 @@
 .completed {
     text-decoration: line-through;
     color: gray;
+}
+
+@media (max-width: 425px) {
+    .item {
+        width: 98%;
+    }
+    .btnStateNotCompleted, 
+    .btnStateCompleted {
+        width: 9%;
+    }
+
+    .completed,
+    .incompleted {
+        width: 57%;
+    }
+
+    .delete {
+        width: 10%;
+    }
 }

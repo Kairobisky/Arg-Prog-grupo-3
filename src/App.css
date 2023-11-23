@@ -17,3 +17,12 @@
     margin: 10px 0;
 }
 
+@media (max-width: 425px) {
+    .container {
+        background-color: #dbe4ee;
+        max-width: 100vw;
+        min-height: 100vh;
+        border-radius: 0;
+        margin: 0;
+    }
+}

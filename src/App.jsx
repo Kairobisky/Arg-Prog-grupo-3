@@ -4,19 +4,26 @@ import "./App.css";
 import { TaskForm, TaskList, TaskSearch } from "./components";
 
 function App() {
+  // creo un form para no tener tantos useStates
+  // aca le paso un objeto con todas las cosas que necesita
   const [form, setForm] = useState({
-    addTask: "",
-    filters: false,
-    filterTask: "",
-    taskStateFilter: "T",
+    addTask: "", // agregar las tareas
+    filters: false, // activar los filtros segun el checkbox
+    filterTask: "", // para filtrar las tareas segun su titulo
+    taskStateFilter: "T", // para filtrar las tareas segun completadas, incompletas o todas, se inicia en todas
   });
 
-  // Añadir Tareas
+  // guardar tareas
   const [tasks, setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("tasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
   });
 
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
+  // funcion para crear tareas
   const addNewTask = (e) => {
     e.preventDefault();
     const { title } = e.target;
@@ -58,6 +65,8 @@ function App() {
     });
   }, [form.filters]);
 
+  // aca le agrego un if para que se fije en q estado tiene el radio para filtrarlas
+  // me base en lo que hizo el profe y busque como cambiarlo para lo que yo queria hacer
   useEffect(() => {
     if (form.taskStateFilter === "C") {
       setCurrentTask(
@@ -84,9 +93,7 @@ function App() {
     }
   }, [form.filterTask, form.taskStateFilter, tasks]);
 
-  console.log(currentTasks);
-
-  //
+  // aca manejo el cambio del radio y del filter para poder activar los filtros y poder cambiar el radio
   const handleChange = (e) => {
     const { name, id, type, value, checked } = e.target;
     if (type === "checkbox") {
@@ -97,11 +104,6 @@ function App() {
       setForm((prev) => ({ ...prev, [name]: value }));
     }
   };
-
-  // Guardar datos
-  useEffect(() => {
-    localStorage.setItem("tasks", JSON.stringify(tasks));
-  }, [tasks]);
 
   return (
     <>

@@ -6,7 +6,6 @@
 
 .formAddTasks {
     min-width: 32rem;
-    border-radius: 20px;
 }
 
 .formAddTasks input {
@@ -42,4 +41,18 @@
 
 .filterBox > label {
     font-size: 18px;
+}
+
+@media (max-width: 425px) {
+    .formAddTasks {
+        min-width: 10rem;
+    }
+    
+    .formAddTasks > input {
+        width: 75%;
+    }
+
+    .formAddTasks > button {
+        width: 25%;
+    }
 }
