@@ -43,7 +43,7 @@
     font-size: 18px;
 }
 
-@media (max-width: 425px) {
+@media (max-width: 768px) {
     .formAddTasks {
         min-width: 10rem;
     }
@@ -54,5 +54,6 @@
 
     .formAddTasks > button {
         width: 25%;
+        color: white;
     }
 }

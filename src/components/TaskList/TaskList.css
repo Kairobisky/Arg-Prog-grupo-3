@@ -9,10 +9,3 @@
     color: red;
     font-size: 25px;
 }
-
-@media screen {
-    .boxList{
-        max-height: 32rem;
-        margin: 10px 0 0 0;
-    }
-}
